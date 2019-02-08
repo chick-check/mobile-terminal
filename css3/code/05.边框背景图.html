@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 200px;
+            width: 300px;
+            background-color: #07a;
+            border: 27px solid #aaa;
+
+            border-image-source: url(../image/border-image.jpg);
+            border-image-slice: 27; /*对背景图片进行切割,可以有4个值，分别表示top,left,bottom,right*/
+            /*设置水平，垂直方向的平铺效果*/
+            border-image-repeat: repeat round; /*stretch默认，拉伸，repeat 重复，round 切割后不出现小块，space*/
+
+            /*边框背景简写形式*/
+            border-image: url(../image/border-image.jpg) 27 repeat round;
+        }
+    </style>
+</head>
+<body>
+    <div class = "box">
+    </div>
+</body>
+</html>

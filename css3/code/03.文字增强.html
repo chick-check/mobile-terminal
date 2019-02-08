@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            font-size: 40px;
+            height: 200px;
+            width: 400px;
+            background-color: blue;
+            color: blue;
+            text-shadow: 2px 2px 3px #ffffff, -2px -2px 3px #ffffff; /*x,y偏移，模糊度，不能是0，阴影颜色，可以有多个值*/
+            box-shadow: inset 2px 2px 3px 4px rgba(103, 109, 198, 0.6); /*盒子阴影，比文本阴影多第四个延展值，也可以设置多个,inset 内阴影，默认外阴影*/
+        }
+        .box2{
+            height: 200px;
+            width: 400px;
+            background-color: #0909;
+            white-space: nowrap; /*文本不换行*/
+            overflow: hidden; /*文本超出不换行*/
+            text-overflow: ellipsis;/*css3新增，clip超出截断，ellipsis显示...;这个必须配合overflow: hidden;使用*/
+        }
+    </style>
+</head>
+<body>
+    <div class = "box">
+         猪年行大运！
+    </div>
+    <div class = "box2">
+        猪年行大运猪年行大运猪年行大运猪年行大运猪年行大运猪年行大运猪年行大运猪年行大运猪年行大运猪年行大运猪年行大运猪年行大运猪年行大运猪年行大运！！
+    </div>
+</body>
+</html>

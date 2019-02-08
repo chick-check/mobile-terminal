@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*线性渐变*/
+        .box{
+            border: 1px solid #ccc;
+            width: 200px;
+            height: 200px;
+            /*
+            to top/bottom/right/left
+            也可以设置渐变角度：0-360 向上是0
+            可以设置多个颜色
+            好像也可以用 background设置渐变
+            */
+            background-image: linear-gradient(to left,rgba(33,0,0,.9),rgba(33,0,0,.1));
+            background-image: linear-gradient(45deg, blue, red 50%, yellow 70%, purple 100%);
+        }
+        /*径向渐变*/
+        .box2{
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(red, yellow 20%, blue);
+        }
+        /*重复渐变(线性/径向)*/
+        .box3{
+            width: 200px;
+            height: 200px;
+            background: repeating-linear-gradient(180deg, blue, red 20px, white 30px);
+
+            background: repeating-radial-gradient(black,black 5px, white 5px, white 10px);
+        }
+    </style>
+</head>
+<body>
+    <div class = "box">
+    </div>
+    <div class = "box2">
+    </div>
+    <div class = "box3">
+    </div>
+</body>
+</html>

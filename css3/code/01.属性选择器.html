@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*a[temp] 的a 可以省略*/
+        [temp]{
+            color: red;
+        }
+        /*包含...*/
+        [temp *= mm]{
+            color: yellow
+        }
+        /*以...开头*/
+        [temp ^= di]{
+            color: brown
+        }
+        /*以...结尾*/
+        [temp $= ll]{
+            color: black
+        }
+        /*伪类选择器*/
+        a:first-child{
+            font-size: 40px;
+        }
+        a:last-child{
+            font-size: 40px;
+        }
+        /*索引从1开始，nth-child(2n+1) 奇数*/
+        a:nth-child(2){
+            font-size: 40px;
+            display: inline-block;
+            border: 1px solid #070707;
+        }
+        /*倒着计算，从1开始索引,a.empty 表示没有任何子节点的a元素*/
+        a:nth-last-child(1){
+            border: 1px solid #070707;
+        }
+    </style>
+</head>
+<body>
+    <a href="#" temp="mds"> hello world!</a>
+    <a href="#" temp="mmss"> hello world!</a>
+    <a href="#" temp="diss"> hello world!</a>
+    <a href="#" temp="yell"> hello world!</a>
+</body>
+</html>

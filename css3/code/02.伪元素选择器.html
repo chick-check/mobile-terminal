@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>伪元素以:: 伪类是 :</title>
+    <style>
+        p::first-letter{
+            font-size: 40px;
+        }
+        p::first-line{
+            color: magenta;
+        }
+        /*::before / :::after为了兼容，可以使用单个冒号,必须有content！！！可以放内容*/
+        p::before{
+            content: '';
+            font-size: 10px;
+        }
+        /*设置选中字体背景色、字体颜色*/
+        p::selection{
+            background-color: aqua;/*css3新增rgba()颜色表示法、HSLA(色调0-360、饱和度 %、亮度 %、透明度 0-1)*/
+            color: red;
+        }
+        /*伪类，锚链接，超出页面会跳转*/
+        p:target{
+            background-color: bisque;
+        }
+        div{
+            height: 200px;
+            width: 200px;
+            background-color: rgba(150, 35, 35, 0.3);
+            opacity: 0.5; /*仅对盒子设置透明度，子盒子也会继承这个值*/
+        }
+
+    </style>
+</head>
+<body>
+    <a href="#txt1">段落1</a>
+    <a href="#txt2">段落2</a>
+    <a href="#txt3">段落3</a>
+    <p id ="txt1">
+        猪年快乐<br>
+        幸福安康<br>
+        心想事成<br>
+    </p>
+    <p id ="txt2">
+        猪年快乐<br>
+        幸福安康<br>
+        心想事成<br>
+    </p>
+    <p id ="txt3">
+        猪年快乐<br>
+        幸福安康<br>
+        心想事成<br>
+    </p>
+    <div>
+    </div>
+</body>
+</html>
