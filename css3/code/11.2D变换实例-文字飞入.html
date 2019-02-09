@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html, body, div{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            font: 30px/1.5 'Microsoft YaHei', serif;
+            color: rgba(33, 98, 196,.8);
+            margin: 100px auto;
+            font-weight: bolder;
+            text-shadow: 2px 2px 3px rgba(33, 98, 196,.6);
+            text-align: center;
+            opacity: .1;
+            transition: transform 2s ease, opacity 2s ease;
+            transform: translate(-1400px) rotate(280deg) scale(3, 3);
+        }
+        /*用来控制transform，opacity的值*/
+        .left-fade-in{
+            transform: none;
+            opacity: .9;
+        }
+    </style>
+</head>
+<body>
+    <input type = "button" id = "btn-in" value="飞入"></button>
+    <input type = "button" id = "btn-out" value="飞出"></button>
+    <div class="box"> 
+        猪年行大运，健康幸福来！
+    </div>
+    <script>
+        /*变签名.className 可以获得标签的class值，用replace方法改变class值*/
+        window.onload = function(){
+            var box = document.querySelector(".box");
+            document.querySelector("#btn-in").addEventListener("click", function(e){
+                box.className += ' left-fade-in'; /*注意这里有空格 class = "box left-fade-in"*/
+            });
+            document.querySelector("#btn-out").addEventListener("click", function(e){
+                box.className = box.className.replace('left-fade-in','');/*去掉 left-fade-in 类*/
+            });
+        }
+    </script>
+</body>
+</html>

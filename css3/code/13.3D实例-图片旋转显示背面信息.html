@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html, body, div{
+            margin: 0;
+            padding: 0;
+        }
+        .box-wrap{
+            width: 450px;
+            height: 300px;
+            margin: 100px auto;
+            position: relative;
+            /*设置3d旋转效果*/
+            transform-style: preserve-3d;
+        }
+        .box-wrap .front, .box-wrap .back{
+            width: 100%;
+            height: 100%;
+            border: 1px solid #ccc;
+            position: absolute;
+            text-align: center;
+            left: 0;
+            top: 0;
+            opacity: .8;
+            transition: all 1s ease;
+            backface-visibility: hidden; /*背面的图片不显示*/
+        }
+       .box-wrap .front{
+           background-color: paleturquoise;
+       }
+        .front img{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+        }
+        .box-wrap .back{
+            background-color: bisque;
+            transform: rotateY(180deg);
+        }
+        /*注意hover要在 box-wrap盒子上*/
+        .box-wrap:hover .front{
+            transform: rotateY(-180deg);
+        }
+        .box-wrap:hover .back{
+            transform: none;
+        }
+    </style>
+</head>
+<body>
+    <div class = "box-wrap">
+        <div class="front">
+            <img src="../image/1.jpg" alt="">
+            <h3>这是一只狗</h3>
+        </div>
+        <div class="back">
+            <p>it is a lovely dog!</p>
+        </div>
+    </div>
+</body>
+</html>

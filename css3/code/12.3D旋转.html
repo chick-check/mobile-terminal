@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html, body, div{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            transition: transform 1s ease;
+        }
+        .box:hover{
+            /*2D移动*/
+            transform: translate(10px,-20px);
+            /*要出现3d效果，必须设置perspective值，不准确的表示屏幕到观察者的距离，视距
+            另外还要设置：
+              transform-style:preserve-3d;
+            */
+            transform: perspective(1000px) translate3d(10px, -20px, 100px);
+        }
+        .box-rotate{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+           
+        }
+        .box-rotate:hover{
+            transform: perspective(1000px) rotateX(30deg) rotateY(10deg) rotateZ(10deg);
+        }
+    </style>
+</head>
+<body>
+    <div class = "box">
+    </div>
+    <div class = "box-rotate">
+    </div>
+</body>
+</html>

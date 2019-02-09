@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>鼠标移入，图片移动</title>
+    <style>
+        html, body, ul, li, h3{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        h3{
+            font: 16px/1.5 'Microsoft YaHei';
+            font-weight: normal;
+        }
+        .layer .pro-list-wrap{
+            margin: 100px auto;
+            width: 960px;
+        }
+        .layer .pro-list-item {
+            float: left;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ccc;
+            text-align: center;
+            margin: 0 10px; 
+        }
+        /*调整图片大小,以父容器为标准*/
+        .layer .pro-list-item img{
+            width: 80%;
+            height: 80%;
+            /*设置渐变属性*/
+            transition: transform .8s ease;
+        }
+        img:hover{
+            transform: translate(5px);
+        }
+    </style>
+</head>
+<!--emmet语法可以了解下-->
+<body>
+    <div class = "layer">
+        <ul class="pro-list-wrap">
+            <li class = "pro-list-item">
+                <a href="javascript:"><img src="../image/1.jpg" alt=""></a>
+                <h3>图片1</h3>
+            </li>
+            <li class = "pro-list-item">
+                <a href="javascript:"><img src="../image/1.jpg" alt=""></a>
+                <h3>图片2</h3>
+            </li>
+            <li class = "pro-list-item">
+                <a href="javascript:"><img src="../image/1.jpg" alt=""></a>
+                <h3>图片3</h3>
+            </li>
+            <li class = "pro-list-item">
+                <a href="javascript:"><img src="../image/1.jpg" alt=""></a>
+                <h3>图片4</h3>
+            </li>
+        </ul>
+    </div>  
+</body>
+</html>
