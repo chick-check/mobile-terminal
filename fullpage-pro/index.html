@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>fullpage全屏滑动案例</title>
+    <!--引入fullpage.js插件的样式-->
+    <link rel="stylesheet" type="text/css" href="./lib/fullPage.js-2.9.7/dist/jquery.fullpage.min.css">
+    <!--引入jquery-->
+    <script type="text/javascript" src="./lib/jquery.min.js"></script>
+    <!--引入jQuery插件fullpage.js核心文件,这个的引入要再jquery之后-->
+    <script type="text/javascript" src="./lib/fullPage.js-2.9.7/dist/jquery.fullpage.min.js"></script>
+    <!--引入动画库css文件-->
+    <link rel="stylesheet" type="text/css" href="./lib/animate.css"> 
+
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+
+</head>
+<body>
+    <!--
+        1、引入jquery
+        2、引入jquery的 fullpage 插件的js脚本和样式
+        3、编写html
+        4、编写jquery插件 fullpage 的初始化代码
+    -->
+    <div class="fullpage-container">
+        <div class="section">
+            <div class="container">
+                <!--添加amt自定义标签来存放动画,把amt的属性值放到class上达到添加动画的效果-->
+                <h3 amt="animated slideInLeft" class="animated slideInLeft">一花一世界，一树一菩提</h3> <!--引入动画库的动画效果：animated 效果名-->
+                <img amt="animated slideInLeft" src="./image/房.jpg" alt="" class="animated slideInLeft">
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <h3 amt="animated slideInLeft" class="">花开堪折直须折，莫待无花空折枝</h3>
+                <img amt="animated slideInUp" src="./image/树.jpg" alt="" class="">
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <h3 amt="animated slideInLeft" class="">面朝大海，春暖花开</h3>
+                <img amt="animated slideInUp" src="./image/海.jpg" alt="" class="">
+            </div>
+        </div>
+        <div class="section">4</div>
+        <div class="section">5</div>
+    </div>
+    <script>
+        /*编写fullpage初始化代码*/
+        $(function(){
+            $('.fullpage-container').fullpage({
+                sectionsColor:['red', 'lightgreen', 'blue', 'teal', '#c09'],
+                /*当前屏离开之前执行的动画*/
+                onLeave: function(index, nextIndex, direction){
+                    //console.log(index, nextIndex,direction);
+                    /*
+                    去掉当前屏的动画样式:
+                    先用attr获取属性amt的值，再用removeClass去掉类（包括class和类值）
+                    */
+                   $('[amt]').each(function(i, element){
+                    var amt = $(element).attr('amt');
+                    $(element).removeClass(amt);
+                   });
+                   //为下一个要显示屏增加动画效果
+                   //nextIndex 所以从1开始， eq()索引从0开始
+                   $('.fullpage-container .section').eq(nextIndex - 1).find('[amt]').each(function(i, elem){
+                    $(elem).addClass($(elem).attr('amt'));
+                   });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
